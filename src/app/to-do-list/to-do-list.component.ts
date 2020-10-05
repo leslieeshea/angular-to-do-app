@@ -11,11 +11,17 @@ import { ToDoService } from '../services/to-do-service.service';
 export class ToDoListComponent implements OnInit {
   todos: ToDo[];
 
-  constructor() {
+  
+  // this is where you inject your services
+  // the name of your service on line 18 doesn't matter. you just bind it to the service class name
+  constructor(
+    private todoService: ToDoService
+  ) {
 
   }
 
+  // now you can use the service by dot notating
   ngOnInit() {
-
+    this.todos = this.todoService.getToDoList();
   }
 }
