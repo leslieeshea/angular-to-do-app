@@ -22,6 +22,8 @@ export class ToDoListComponent implements OnInit {
 
   // now you can use the service by dot notating
   ngOnInit() {
-    this.todos = this.todoService.getToDoList();
+    this.todoService.getToDoList().subscribe(todos => { // subscribe is similar to a .then in a promise
+      this.todos = todos; // setting the to dos to be rendered to ones that are returned from api
+    });
   }
 }

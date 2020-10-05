@@ -1,33 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { ToDo } from '../models/ToDo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToDoService {
+  todosUrl: 'https://jsonplaceholder.typicode.com/todos';
 
   // have to inject http module here to use it
   constructor(
     private http: HttpClient
   ) { }
 
-  getToDoList() {
-    return [
-      {
-      id: 1,
-      title: 'To Do 1',
-      completed: false
-      },
-      {
-      id: 2,
-      title: 'To Do 2',
-      completed: true
-      },
-      {
-      id: 3,
-      title: 'To Do 3',
-      completed: false
-      }
-    ]
+  //will return an observable
+  getToDoList(): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(this.todosUrl); // make get request to api
   }
 }
