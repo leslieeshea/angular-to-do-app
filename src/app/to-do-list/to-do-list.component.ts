@@ -26,4 +26,8 @@ export class ToDoListComponent implements OnInit {
       this.todos = todos; // setting the to dos to be rendered to ones that are returned from api
     });
   }
+
+  deleteToDo(todo: ToDo) {
+    console.log('Delete me');
+  }
 }
