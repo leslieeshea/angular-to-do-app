@@ -16,9 +16,7 @@ export class ToDoListComponent implements OnInit {
   // the name of your service on line 18 doesn't matter. you just bind it to the service class name
   constructor(
     private todoService: ToDoService
-  ) {
-
-  }
+  ) { }
 
   // now you can use the service by dot notating
   ngOnInit() {
@@ -28,7 +26,9 @@ export class ToDoListComponent implements OnInit {
   }
 
   deleteToDo(todo: ToDo) {
+    // removes to do item from UI
     this.todos = this.todos.filter(t => t.id !== todo.id) // return all the todos that don't have this id
+    // removes to do item from server
     this.todoService.deleteToDo(todo).subscribe();
   }
 }
