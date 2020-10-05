@@ -23,4 +23,12 @@ export class ToDoItemComponent implements OnInit {
 
     return classes;
   }
+
+  onToggle(todo) {
+    todo.completed = !todo.completed; //if it's true, set it to false, and if it's false, set it to true
+  }
+
+  onDelete(todo) {
+    console.log('Delete');
+  }
 }
