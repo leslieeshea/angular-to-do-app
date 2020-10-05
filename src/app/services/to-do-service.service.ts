@@ -30,6 +30,12 @@ export class ToDoService {
   // toggle completed
   toggleCompleted(todo: ToDo): Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
-    return this.http.put(url, todo, httpOptions); //sending data back to url with specific to do id and what type of data
+    return this.http.put(url, todo, httpOptions); // sending data back to url with specific to do id and what type of data
+  }
+
+  // delete to do item
+  deleteToDo(todo: ToDo): Observable<ToDo> {
+    const url = `${this.todosUrl}/${todo.id}`;
+    return this.http.delete<ToDo>(url, httpOptions); // sending back data of which to do item to delete
   }
 }

@@ -29,6 +29,6 @@ export class ToDoListComponent implements OnInit {
 
   deleteToDo(todo: ToDo) {
     this.todos = this.todos.filter(t => t.id !== todo.id) // return all the todos that don't have this id
-    
+    this.todoService.deleteToDo(todo).subscribe();
   }
 }
