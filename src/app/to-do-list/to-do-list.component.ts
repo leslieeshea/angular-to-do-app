@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ToDo } from '../models/ToDo';
+import { ToDoService } from '../services/to-do-service.service';
 
 @Component({
   selector: 'app-to-do-list',
@@ -14,22 +16,6 @@ export class ToDoListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.todos = [
-      {
-      id: 1,
-      title: 'To Do 1',
-      completed: false
-      },
-      {
-      id: 2,
-      title: 'To Do 2',
-      completed: true
-      },
-      {
-      id: 3,
-      title: 'To Do 3',
-      completed: false
-      }
-    ]
+
   }
 }
