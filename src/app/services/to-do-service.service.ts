@@ -8,7 +8,8 @@ import { ToDo } from '../models/ToDo';
   providedIn: 'root'
 })
 export class ToDoService {
-  todosUrl: 'https://jsonplaceholder.typicode.com/todos';
+  todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+  todosLimit: string = '?_limit=10'
 
   // have to inject http module here to use it
   constructor(
@@ -17,6 +18,6 @@ export class ToDoService {
 
   //will return an observable
   getToDoList(): Observable<ToDo[]> {
-    return this.http.get<ToDo[]>(this.todosUrl); // make get request to api
+    return this.http.get<ToDo[]>(`${this.todosUrl}${this.todosLimit}`); // make get request to api
   }
 }
