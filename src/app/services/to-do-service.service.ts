@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToDoService {
 
-  constructor() { }
+  // have to inject http module here to use it
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getToDoList() {
     return [
