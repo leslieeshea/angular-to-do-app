@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToDo } from '../models/ToDo';
 
 @Component({
   selector: 'app-to-do',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do.component.css']
 })
 export class ToDoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    todos: [ToDo];
   }
 
+  ngOnInit() {
+
+  }
 }
