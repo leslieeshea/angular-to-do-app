@@ -4,6 +4,12 @@ import { Observable } from 'rxjs';
 
 import { ToDo } from '../models/ToDo';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,5 +25,11 @@ export class ToDoService {
   //will return an observable
   getToDoList(): Observable<ToDo[]> {
     return this.http.get<ToDo[]>(`${this.todosUrl}${this.todosLimit}`); // make get request to api
+  }
+
+  // toggle completed
+  toggleCompleted(todo: ToDo): Observable<any> {
+    const url = `${this.todosUrl}/${todo.id}`;
+    return this.http.put(url, todo, httpOptions); //sending data back to url with specific to do id and what type of data
   }
 }
