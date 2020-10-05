@@ -34,6 +34,6 @@ export class ToDoListComponent implements OnInit {
   addToDo(todo: ToDo) {
     this.todoService.addToDo(todo).subscribe(todo => {
       this.todos.push(todo);
-    })
+    });
   }
 }
