@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
-import { HeaderComponent } from './layout/header/header.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
