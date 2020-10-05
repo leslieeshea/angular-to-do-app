@@ -38,4 +38,8 @@ export class ToDoService {
     const url = `${this.todosUrl}/${todo.id}`;
     return this.http.delete<ToDo>(url, httpOptions); // sending back data of which to do item to delete
   }
+
+  addToDo(todo: ToDo): Observable<ToDo> {
+    return this.http.post<ToDo>(this.todosUrl, todo, httpOptions);
+  }
 }

@@ -11,7 +11,6 @@ import { ToDoService } from '../services/to-do-service.service';
 export class ToDoListComponent implements OnInit {
   todos: ToDo[];
 
-  
   // this is where you inject your services
   // the name of your service on line 18 doesn't matter. you just bind it to the service class name
   constructor(
@@ -30,5 +29,11 @@ export class ToDoListComponent implements OnInit {
     this.todos = this.todos.filter(t => t.id !== todo.id) // return all the todos that don't have this id
     // removes to do item from server
     this.todoService.deleteToDo(todo).subscribe();
+  }
+
+  addToDo(todo: ToDo) {
+    this.todoService.addToDo(todo).subscribe(todo => {
+      this.todos.push(todo);
+    })
   }
 }
