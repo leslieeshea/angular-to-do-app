@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ToDo } from '../models/ToDo';
 
 @Component({
-  selector: 'app-to-do',
-  templateUrl: './to-do.component.html',
-  styleUrls: ['./to-do.component.css']
+  selector: 'app-to-do-list',
+  templateUrl: './to-do-list.component.html',
+  styleUrls: ['./to-do-list.component.css']
 })
-export class ToDoComponent implements OnInit {
+export class ToDoListComponent implements OnInit {
   todos: ToDo[];
 
   constructor() {
