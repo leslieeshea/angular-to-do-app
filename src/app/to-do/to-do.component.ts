@@ -19,6 +19,16 @@ export class ToDoComponent implements OnInit {
       id: 1,
       title: 'To Do 1',
       completed: false
+      },
+      {
+      id: 2,
+      title: 'To Do 2',
+      completed: true
+      },
+      {
+      id: 3,
+      title: 'To Do 3',
+      completed: false
       }
     ]
   }
