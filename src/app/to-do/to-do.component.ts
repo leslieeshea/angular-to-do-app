@@ -7,11 +7,19 @@ import { ToDo } from '../models/ToDo';
   styleUrls: ['./to-do.component.css']
 })
 export class ToDoComponent implements OnInit {
+  todos: ToDo[];
+
   constructor() {
-    todos: [ToDo];
+
   }
 
   ngOnInit() {
-
+    this.todos = [
+      {
+      id: 1,
+      title: 'To Do 1',
+      completed: false
+      }
+    ]
   }
 }
