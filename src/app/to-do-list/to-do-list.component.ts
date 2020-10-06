@@ -12,15 +12,15 @@ export class ToDoListComponent implements OnInit {
   todos: ToDo[];
 
   // this is where you inject your services
-  // the name of your service on line 18 doesn't matter. you just bind it to the service class name
+  // the name of your service on line 17 doesn't matter. you just bind it to the service class name
   constructor(
     private todoService: ToDoService
   ) { }
 
   // now you can use the service by dot notating
   ngOnInit() {
-    this.todoService.getToDoList().subscribe(todos => { // subscribe is similar to a .then in a promise
-      this.todos = todos; // setting the to dos to be rendered to ones that are returned from api
+    this.todoService.getToDoList().subscribe(data => { // subscribe is similar to a .then in a promise
+      this.todos = data; // setting the data (list of to dos from api) to the to dos array
     });
   }
 

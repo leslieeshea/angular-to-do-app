@@ -37,7 +37,6 @@ export class ToDoItemComponent implements OnInit {
     this.todoService.toggleCompleted(todo).subscribe(todo => {
       console.log(todo);
     });
-
   }
 
   onDelete(todo) {
